@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Generator</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="icon" href="data:," />
+    <script defer src="books.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="header__title">Book Search</h1>
+        <p class="header__subtitle">
+          Search books by title, author, or keywords.
+        </p>
+      </header>
+
+      <form class="search">
+        <label for="search-input" class="search__label">Search term</label>
+        <div class="search__group">
+          <input
+            id="search-input"
+            class="search__input"
+            name="query"
+            type="search"
+            placeholder="e.g. The Lord of the Rings"
+            required
+          />
+          <button class="btn search__btn" type="submit">Search</button>
+        </div>
+      </form>
+
+      <div class="controls">
+        <div class="controls__group">
+          <label for="sort-select" class="controls__label">Sort by:</label>
+          <select id="sort-select" class="controls__select">
+            <option value="relevance">Relevance</option>
+            <option value="newest">Year (Newest)</option>
+            <option value="oldest">Year (Oldest)</option>
+            <option value="a-z">Title (A-Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <p
+        id="search-status"
+        class="status status--hidden"
+        aria-live="polite"
+      ></p>
+
+      <div id="results" class="results results--hidden"></div>
+
+      <div class="pagination">
+        <button
+          id="load-more"
+          class="btn pagination__btn pagination__btn--hidden"
+          type="button"
+        >
+          Load more
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
